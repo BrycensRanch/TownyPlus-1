@@ -8,9 +8,9 @@ buildscript {
 
 plugins {
     id 'com.github.johnrengelman.shadow' version '7.1.2'
-    id 'kr.entree.spigradle' version '2.3.4'
-    id 'io.freefair.lombok' version '6.3.0'
-    id 'com.gorylenko.gradle-git-properties' version '2.4.0'
+    id 'kr.entree.spigradle' version '2.4.3'
+    id 'io.freefair.lombok' version '6.6.3'
+    id 'com.gorylenko.gradle-git-properties' version '2.4.1'
     id 'java'
     id 'jacoco'
     id 'idea'
@@ -73,17 +73,17 @@ dependencies {
     implementation "io.papermc.paper:paper-api:${mcVersion}-R0.1-SNAPSHOT"
 
     // Command Handling! https://commandframework.cloud
-    implementation 'cloud.commandframework:cloud-paper:1.6.1'
-    implementation 'cloud.commandframework:cloud-minecraft-extras:1.6.2'
+    implementation 'cloud.commandframework:cloud-paper:1.8.3'
+    implementation 'cloud.commandframework:cloud-minecraft-extras:1.8.3'
     // Dependency for our way of command handling
-    implementation 'me.lucko:commodore:1.12'
+    implementation 'me.lucko:commodore:1.13'
     // For handling multi platform configuration, simply amazing
     implementation "org.spongepowered:configurate-yaml:4.1.2"
     // Towny
-    compileOnly 'com.palmergames.bukkit.towny:towny:0.97.5.17'
+    compileOnly 'com.palmergames.bukkit.towny:towny:0.98.6.23'
     // Adventure
-    implementation "net.kyori:adventure-api:4.10.1"
-    implementation "net.kyori:adventure-text-minimessage:4.10.0-SNAPSHOT"
+    implementation "net.kyori:adventure-api:4.13.0"
+    implementation "net.kyori:adventure-text-minimessage:4.13.0"
 
 //    // DiscordSRV, optional dependency
 //    compileOnly 'com.discordsrv:discordsrv:1.24.0'
@@ -93,18 +93,18 @@ dependencies {
 //    }
 
     // Test dependencies
-    testImplementation 'org.junit.jupiter:junit-jupiter:5.8.2'
-    testImplementation 'org.mockito:mockito-core:4.3.1'
-    testImplementation 'com.github.seeseemelk:MockBukkit-v1.18:1.15.5'
-    testImplementation 'org.assertj:assertj-core:3.22.0'
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.9.2'
+    testImplementation 'org.mockito:mockito-core:4.11.0'
+    testImplementation 'com.github.seeseemelk:MockBukkit-v1.18:1.26.1'
+    testImplementation 'org.assertj:assertj-core:3.24.2'
 }
 
 shadowJar {
     classifier = ''
     dependencies {
 //        include(dependency('com.discordsrv:discordsrv:1.24.0'))
-        include(dependency('com.palmergames.bukkit.towny:towny:0.97.5.16'))
-        include(dependency("net.kyori:adventure-text-minimessage:4.1.0-SNAPSHOT"))
+        include(dependency('com.palmergames.bukkit.towny:towny:0.98.6.23'))
+        include(dependency("net.kyori:adventure-text-minimessage:4.13.0"))
 
     }
 //    relocate 'com.discordsrv', "${packageName}.discordsrv"
