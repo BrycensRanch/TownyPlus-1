@@ -21,7 +21,7 @@ jobs:
 
       - name: Cache Gradle
         id: cache-gradle
-        uses: actions/cache@v1
+        uses: actions/cache@v3
         with:
           path: ~/.gradle
           key: ${{ runner.os }}-gradle
@@ -53,7 +53,7 @@ jobs:
 
       - name: Cache Gradle
         id: cache-gradle
-        uses: actions/cache@v1
+        uses: actions/cache@v3
         with:
           path: ~/.gradle
           key: ${{ runner.os }}-gradle
@@ -103,7 +103,7 @@ jobs:
 
       - name: Cache Gradle
         id: cache-gradle
-        uses: actions/cache@v1
+        uses: actions/cache@v3
         with:
           path: ~/.gradle
           key: ${{ runner.os }}-gradle
